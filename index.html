@@ -110,7 +110,7 @@
 <script language="javascript">
     function show_date_time() {
         window.setTimeout("show_date_time()", 1000);
-        BirthDay = new Date("4/12/2019 00:00:00");//这个日期是可以修改的
+        BirthDay = new Date("4/12/2019 00:00:00");
         today = new Date();
         timeold = (today.getTime() - BirthDay.getTime());
         sectimeold = timeold / 1000
@@ -133,7 +133,7 @@
         init: function () {
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
-			//想说的话
+			//simulate输出
             S.UI.simulate("公子|I'm|Realy|Nice|to|Meet|You|#countdown 3|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
@@ -667,22 +667,9 @@
     }());
     S.init();
 	
-	//audio预加载
-	    var music = document.getElementById('bgm');
-	    
-	            var state = 0;
-	            document.addEventListener('touchstart', function(){
-	                if(state==0){
-	                    music.play();
-	                    state=1;
-	                }
-	            }, false);
-	    
-	            document.addEventListener("WeixinJSBridgeReady", function () {
-	                music.play();
-	            }, false);
+	
 </script>
-<audio autoplay="autoplay" loop="loop" preload="auto" muted="muted" id="bgm" preload="auto">
+<audio autoplay="autoplay" loop="loop" preload="auto"  id="bgm" >
     <source src="wang.mp3" type="audio/mpeg">
 </audio>
 </body>
